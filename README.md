@@ -16,6 +16,15 @@ React Reserve is an e-commerce app created using the MERN stack.
 8.	View order history
 9.	Image and File Uploads
 10.	Pagination
+
+### Root User profile
+![Root User screen](https://cdn.discordapp.com/attachments/686543270943522825/733263262002446336/unknown.png)
+
+### Admin User profile
+![Root User screen](https://cdn.discordapp.com/attachments/686543270943522825/733262515839959080/AdminUser.png)
+
+### Normal User profile
+![Root User screen](https://cdn.discordapp.com/attachments/686543270943522825/733263173657952276/unknown.png)
  
 ### Stack: MERN
  
