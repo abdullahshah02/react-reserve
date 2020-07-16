@@ -25,6 +25,9 @@ React Reserve is an e-commerce app created using the MERN stack.
 
 ### Normal User profile
 ![Root User screen](https://cdn.discordapp.com/attachments/686543270943522825/733263173657952276/unknown.png)
+
+### Create Product Route
+![Create Product route](https://cdn.discordapp.com/attachments/686543270943522825/733263850463559750/CreateProduct.png)
  
 ### Stack: MERN
  
