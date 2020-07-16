@@ -1,5 +1,5 @@
-import User from '../../models/User'
-import jwt from 'jsonwebtoken'
+import User from '../../models/User';
+import jwt from 'jsonwebtoken';
 
 export default async (req, res) => {
     try {
@@ -10,6 +10,6 @@ export default async (req, res) => {
     }
     catch (error) {
         console.error(error);
-        res.status(403).send("Please login again");
+        res.status(403).send('Please login again');
     }
-}
+};

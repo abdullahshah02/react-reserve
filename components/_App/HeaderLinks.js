@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import { Menu, Icon } from 'semantic-ui-react'
-import { handleLogout } from '../../utils/auth'
+import Link from 'next/link';
+import { Menu, Icon } from 'semantic-ui-react';
+import { handleLogout } from '../../utils/auth';
 
-export function SignedInLinks({isAdmin}) {
+export function SignedInLinks({ isAdmin }) {
 
     return (
         <>
@@ -29,7 +29,7 @@ export function SignedInLinks({isAdmin}) {
                 </Menu.Item>
             </Link>
         </>
-    )
+    );
 }
 
 export function SignedOutLinks() {
@@ -56,12 +56,12 @@ export function SignedOutLinks() {
                 </Menu.Item>
             </Link>
         </>
-    )
+    );
 }
 
 export function AdminLinks(isAdmin) {
-    
-    if(!isAdmin)
+
+    if (!isAdmin)
         return null;
 
     return (
@@ -73,5 +73,5 @@ export function AdminLinks(isAdmin) {
                 </Menu.Item>
             </Link>
         </>
-    )
+    );
 }

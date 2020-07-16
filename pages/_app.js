@@ -1,13 +1,14 @@
-import App from "next/app";
-import Layout from "../components/_App/Layout";
-import 'semantic-ui-css/semantic.min.css';
+import App from 'next/app';
+import axios from 'axios';
+import { Router } from 'next/router';
+import baseURL from '../utils//baseUrl';
+import { redirectUser } from '../utils/auth';
+import Layout from '../components/_App/Layout';
+import { parseCookies, destroyCookie } from 'nookies';
+
 import '../public/styles.css';
-import '../public/nprogress.css'
-import { parseCookies, destroyCookie } from 'nookies'
-import { redirectUser } from '../utils/auth'
-import baseURL from '../utils//baseUrl'
-import axios from 'axios'
-import { Router } from "next/router";
+import '../public/nprogress.css';
+import 'semantic-ui-css/semantic.min.css';
 
 class MyApp extends App {
 
@@ -17,21 +18,21 @@ class MyApp extends App {
     let pageProps = {};
 
     if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
+      pageProps = await Component.getInitialProps(ctx);
     }
 
     if (!token) {
-      const isProtectedRoute = ctx.pathname === '/account' || ctx.pathname === '/create'
+      const isProtectedRoute = ctx.pathname === '/account' || ctx.pathname === '/create';
       if (isProtectedRoute) {
-        redirectUser(ctx, '/login')
+        redirectUser(ctx, '/login');
       }
     }
     else {
       try {
 
-        const isProtectedRoute = ctx.pathname === '/login' || ctx.pathname === '/signup'
+        const isProtectedRoute = ctx.pathname === '/login' || ctx.pathname === '/signup';
         if (isProtectedRoute) {
-          redirectUser(ctx, '/')
+          redirectUser(ctx, '/');
         }
 
         const payload = { headers: { authorization: token } };
@@ -49,23 +50,23 @@ class MyApp extends App {
         pageProps.user = user;
       }
       catch (err) {
-        console.error("Error getting current user", err);
-        destroyCookie(ctx, "token");
-        redirectUser(ctx, "/login")
+        console.error('Error getting current user', err);
+        destroyCookie(ctx, 'token');
+        redirectUser(ctx, '/login');
       }
     }
 
-    return { pageProps: pageProps }
+    return { pageProps: pageProps };
   }
 
   componentDidMount() {
-    window.addEventListener('storage', this.syncLogout)
+    window.addEventListener('storage', this.syncLogout);
   }
 
   syncLogout = event => {
     if (event.key === 'logout') {
-      console.log("Logged out from storage.")
-      Router.push('/')
+      console.log('Logged out from storage.');
+      Router.push('/');
     }
   }
 
@@ -75,7 +76,7 @@ class MyApp extends App {
       <Layout {...pageProps}>
         <Component {...pageProps} />
       </Layout>
-    )
+    );
   }
 }
 

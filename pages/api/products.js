@@ -1,5 +1,5 @@
-import Product from '../../models/Product'
-import connectDB from '../../utils/connectDb'
+import Product from '../../models/Product';
+import connectDB from '../../utils/connectDb';
 
 connectDB();
 
@@ -19,6 +19,6 @@ export default async (req, res) => {
         const skips = pageSize * (pageNum - 1);
         products = await Product.find().skip(skips).limit(pageSize);
     }
-    console.log(totalPages)
-    res.status(200).json({products, totalPages});
-}
+    console.log(totalPages);
+    res.status(200).json({ products, totalPages });
+};

@@ -1,10 +1,10 @@
-import mongoose from 'mongoose'
-const { String, Number, ObjectId } = mongoose.Schema.Types
+import mongoose from 'mongoose';
+const { Number, ObjectId } = mongoose.Schema.Types;
 
 const CartSchema = new mongoose.Schema({
     user: {
         type: ObjectId,
-        ref: "User"
+        ref: 'User'
     },
     products: [
         {
@@ -14,11 +14,11 @@ const CartSchema = new mongoose.Schema({
             },
             product: {
                 type: ObjectId,
-                ref: "Product"
+                ref: 'Product'
             }
         }
     ]
-})
+});
 
 
 export default mongoose.models.Cart ||

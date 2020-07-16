@@ -1,10 +1,10 @@
-import mongoose from 'mongoose'
-const { String, Number, ObjectId } = mongoose.Schema.Types
+import mongoose from 'mongoose';
+const { String, Number, ObjectId } = mongoose.Schema.Types;
 
 const OrderSchema = new mongoose.Schema({
     user: {
         type: ObjectId,
-        ref: "User"
+        ref: 'User'
     },
     products: [
         {
@@ -14,7 +14,7 @@ const OrderSchema = new mongoose.Schema({
             },
             product: {
                 type: ObjectId,
-                ref: "Product"
+                ref: 'Product'
             }
         }
     ],
@@ -28,7 +28,7 @@ const OrderSchema = new mongoose.Schema({
     }
 }, {
     timestamps: true
-})
+});
 
 export default mongoose.models.Order ||
     mongoose.model('Order', OrderSchema);
