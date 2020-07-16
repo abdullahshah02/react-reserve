@@ -31,13 +31,13 @@ React Reserve is an e-commerce app created using the MERN stack.
 ```
 module.exports = {
  env: {
-    MONGO_SRV: '<insert here>',
-		JWT_SECRET: '<insert here>',
-		CLOUDINARY_URL: '<insert here>',
-		CLOUDINARY_CLOUD_NAME: '<insert here>',
-		CLOUDINARY_PRESET: '<insert here>',
-		STRIPE_SECRET_KEY: '<insert here>',
-		PROD_URL: '<insert here>'	
+	MONGO_SRV: '<insert here>',
+	JWT_SECRET: '<insert here>',
+	CLOUDINARY_URL: '<insert here>',
+	CLOUDINARY_CLOUD_NAME: '<insert here>',
+	CLOUDINARY_PRESET: '<insert here>',
+	STRIPE_SECRET_KEY: '<insert here>',
+	PROD_URL: '<insert here>'	
  },
 };
 ```
