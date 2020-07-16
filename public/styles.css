@@ -1,0 +1,9 @@
+/* Overrides default styled accordion styles (too much bottom padding) */
+.ui.styled.accordion .content {
+  margin: 0;
+  padding: 0.5em 1em 0.75em !important;
+}
+
+.ui.menu {
+  border-radius: 0px !important;
+}
